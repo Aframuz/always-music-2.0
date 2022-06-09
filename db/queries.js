@@ -38,7 +38,6 @@ const queryConf = {
    add: {
       query: {
          text: `INSERT INTO "Student" (nombre, rut, curso, nivel) VALUES ($1, $2, $3, $4) RETURNING *;`,
-         values: [],
       },
       log: (res) =>
          console.log(`Estudiante ${res.rows[0].nombre} agregado con éxito`),
@@ -58,7 +57,6 @@ const queryConf = {
    getByRut: {
       query: {
          text: `SELECT * FROM "Student" WHERE rut = $1;`,
-         values: [],
       },
       log: (res) => {
          if (res.rows.length === 0) {
@@ -73,7 +71,6 @@ const queryConf = {
    edit: {
       query: {
          text: `UPDATE "Student" SET nombre = $1, rut = $2, curso = $3, nivel = $4 WHERE rut = $2 RETURNING *;`,
-         values: [],
       },
       log: (res) =>
          console.log(`Estudiante ${res.rows[0].nombre} editado con éxito`),
@@ -83,7 +80,6 @@ const queryConf = {
    delete: {
       query: {
          text: `DELETE FROM "Student" WHERE rut = $1 RETURNING *;`,
-         values: [],
       },
       log: (res) =>
          console.log(
