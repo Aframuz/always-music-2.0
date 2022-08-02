@@ -1,6 +1,6 @@
 # Desafío - Always Music 2.0
 
-## Capítulos
+## Habilidades a Evaluar
 
 El desafío está basado en el siguiente capítulo de la lectura:
 
@@ -27,15 +27,17 @@ En este desafío deberás ocupar la clase Pool definiendo sus diferentes propied
 3. Capturar los posibles errores en todas las consultas e imprimirlos por consola.
 4. Obtener el registro de estudiantes registrados en formatos de arreglos.
 
-## Notas
+### Dónde encontrar cada requerimiento
 
--  [x] Requerimiento 1
--  [x] Requerimiento 2
--  [x] Requerimiento 3
--  [x] Requerimiento 4
+1. `/db/queries.js`, en dentro del objeto _queryConf_. [Link](https://github.com/Aframuz/always-music-2.0/blob/b036c484401207c2905bf77c0737bd933e413f99/db/queries.js#L29)
+2. `/db/queries.js`, usando una función general y el objeto _queryConf_. [Link](https://github.com/Aframuz/always-music-2.0/blob/b036c484401207c2905bf77c0737bd933e413f99/db/queries.js#L14)
+3. `/db/queries.js`. Cada consulta tiene un error especificado en el objeto _queryConf_ y usado en la función general _queryStructure_. [Ejemplo](https://github.com/Aframuz/always-music-2.0/blob/b036c484401207c2905bf77c0737bd933e413f99/db/queries.js#L35)
+4. `/db/queries.js`. Dentro del objeto _queryConf_ se encuentra el objeto _get_ que posee la propiedad _rowMode_. [Link](https://github.com/Aframuz/always-music-2.0/blob/b036c484401207c2905bf77c0737bd933e413f99/db/queries.js#L39)
+
+## Notas
 
 Casi lo mismo que always-music, diferencias:
 
--  rowMode en configuración de query (queries.js:51)
+-  rowMode en configuración de query
 
 **connectionString**: postgresql://postgres:postgres@localhost:5432/AlwaysMusic
