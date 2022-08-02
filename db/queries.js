@@ -21,9 +21,7 @@ const queryStructure = async (query, log, errMsg) => {
       log(res)
    } catch (err) {
       // (3) Print error message
-      console.log(
-         `Error ${errMsg}:\nError code: ${err.code}\nError message: ${err.message}`
-      )
+      console.log(`Error ${errMsg}:\nError code: ${err.code}\nError message: ${err.message}`)
    } finally {
       // Release the client back to the pool
       client.release()
@@ -32,15 +30,14 @@ const queryStructure = async (query, log, errMsg) => {
    pool.end()
 }
 
-// (1) (2) Query configuration
+// (1) & (2) Query configuration
 const queryConf = {
    // Add config
    add: {
       query: {
          text: `INSERT INTO "Student" (nombre, rut, curso, nivel) VALUES ($1, $2, $3, $4) RETURNING *;`,
       },
-      log: (res) =>
-         console.log(`Estudiante ${res.rows[0].nombre} agregado con éxito`),
+      log: (res) => console.log(`Estudiante ${res.rows[0].nombre} agregado con éxito`),
       errMsg: `adding student`,
    },
    // Get config
@@ -72,8 +69,7 @@ const queryConf = {
       query: {
          text: `UPDATE "Student" SET nombre = $1, rut = $2, curso = $3, nivel = $4 WHERE rut = $2 RETURNING *;`,
       },
-      log: (res) =>
-         console.log(`Estudiante ${res.rows[0].nombre} editado con éxito`),
+      log: (res) => console.log(`Estudiante ${res.rows[0].nombre} editado con éxito`),
       errMsg: `editing student`,
    },
    // Delete config
@@ -81,10 +77,7 @@ const queryConf = {
       query: {
          text: `DELETE FROM "Student" WHERE rut = $1 RETURNING *;`,
       },
-      log: (res) =>
-         console.log(
-            `Registro de estudiante con rut ${res.rows[0].rut} eliminado`
-         ),
+      log: (res) => console.log(`Registro de estudiante con rut ${res.rows[0].rut} eliminado`),
       errMsg: `deleting student`,
    },
 }
